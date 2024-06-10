@@ -1,0 +1,31 @@
+.app-form {
+    @media (min-width: 576px){
+        padding-top: 15rem;
+    }
+  .sub-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .section-block {
+    border: 0.063rem solid #ccc;
+    margin: 0.313rem 0 0.938rem;
+    padding: 0;
+    background: #fff;
+    clear: both;
+    .section-header {
+      position: relative;
+      vertical-align: bottom;
+    }
+    .section-content {
+      .sub-row {
+        [class*="col-"] {
+          padding: 0.5rem 0.25rem 1rem;
+        }
+      }
+    }
+  }
+  .btn-solo-group{
+    display: flex;
+    justify-content: flex-end;
+  }
+}

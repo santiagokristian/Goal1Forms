@@ -1,0 +1,85 @@
+<div class="container app-form">
+  <div class="card mx-auto">
+    <div class="card-body">
+      <div class="card-title h3">Online Account Opening Form
+      </div>
+      <div class="col-md-12">
+        <div class="section-block">
+          <div class="section-header">
+            <h4>Account Information Details</h4>
+          </div>
+          <div class="section-content" [formGroup]="form">
+            <div class="sub-row">
+              <div class="col-md-4 col-sm-4 col-12">
+                <label for="acctSubType">Account Sub-type</label>
+                <select class="form-select" id="acctSubType" formControlName="accountType"
+                  [ngClass]="{ 'is-invalid': checkForValidity('accountType')}">
+                  <option value="" disabled>SELECT SUB TYPE</option>
+                  @for (item of accountSubTypeList; track $index) {
+                  <option [value]="item.value">{{item.desc}}</option>
+                  }
+                </select>
+              </div>
+              <div class="col-md-4 col-sm-4 col-12">
+                <label for="prod">Product</label>
+                <select class="form-select" id="prod" formControlName="product"
+                  [ngClass]="{ 'is-invalid': checkForValidity('product')}">
+                  <option value="" disabled>SELECT PRODUCT</option>
+                  @for (item of productList; track $index) {
+                  <option [value]="item.value">{{item.desc}}</option>
+                  }
+                </select>
+              </div>
+              <div class="col-md-4 col-sm-4 col-12">
+                <label for="prodType">Product Type</label>
+                <select class="form-select" id="prodType" formControlName="productType"
+                  [ngClass]="{ 'is-invalid': checkForValidity('productType')}">
+                  <option value="" disabled>SELECT PRODUCT TYPE</option>
+                  @for (item of productTypeList; track $index) {
+                  <option [value]="item.value">{{item.desc}}</option>
+                  }
+                </select>
+              </div>
+            </div>
+            <div class="sub-row primary-name">
+              <div class="col-md-4 col-sm-4 col-12">
+                <label for="firstName">Primary Name</label>
+                <input type="text" class="form-control" id="firstName" formControlName="firstName"
+                  [ngClass]="{ 'is-invalid': checkForValidity('firstName')}" placeholder="First Name">
+              </div>
+              <div class="col-md-4 col-sm-4 col-12">
+                <label for="middleName"></label>
+                <input type="text" id="middleName" class="form-control" formControlName="middleName"
+                  [ngClass]="{ 'is-invalid': checkForValidity('middleName')}" placeholder="Middle Name">
+              </div>
+              <div class="col-md-4 col-sm-4 col-12">
+                <label for="lastName"></label>
+                <input type="text" id="lastName" class="form-control" formControlName="lastName"
+                  [ngClass]="{ 'is-invalid': checkForValidity('lastName')}" placeholder="Last Name">
+              </div>
+            </div>
+            <div class="sub-row primary-name">
+              <div class="col-md-4 col-sm-4 col-12">
+                <label for="mobile">Mobile No.</label>
+                <input type="text" class="form-control" id="mobile" formControlName="mobileNo"
+                  [ngClass]="{ 'is-invalid': checkForValidity('mobileNo')}" placeholder="Mobile No.">
+              </div>
+              <div class="col-md-4 col-sm-4 col-12">
+                <label for="email">Email Address</label>
+                <input type="text" class="form-control" id="email" formControlName="email"
+                  [ngClass]="{ 'is-invalid': checkForValidity('email')}" placeholder="EMAIL@GMAIL.COM">
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="btn-solo-group">
+          <button class="btn btn-secondary mx-2" (click)="onClear()">Clear</button>
+          <button class="btn btn-primary" type="button" (click)="onSubmit()">Proceed with The Application</button>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

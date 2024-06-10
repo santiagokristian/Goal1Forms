@@ -1,0 +1,16 @@
+<div class="container app-success">
+  <div class="card mx-auto">
+    <div class="card-body">
+      <div class="card-title h3">Thank you for your Application.
+      </div>
+      <div class="col-md-6 content-details">
+        <div *ngIf="application$ | async as application" class="text-content"> Hi <b>{{application.firstName}}
+            {{application.middleName}} {{application.lastName}}</b>, thank you for fullfilling the
+          Application. We will contact you through your
+          email address: <b>{{application.email}}</b> and mobile no: <b>{{application.mobileNo}}</b> to inform you of
+          the application status. Thank you for trusting us.</div>
+        <div class="sun-trust"><img src="/assets/images/SunTrust.png" class="logo" /></div>
+      </div>
+    </div>
+  </div>
+</div>
